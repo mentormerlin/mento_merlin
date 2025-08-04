@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor Merlin Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />    
+    <script defer src="questions.js"></script>
+    <script defer src="script.js"></script>
+    <!-- Use relative asset paths for icons -->
+    <link rel="icon" type="image/png" href="assets/MM_logo.png" />
+    <link rel="shortcut icon" href="assets/MM_logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/MM_logo.png" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/MM_logo.png" alt="Mentor Merlin Logo" />
+                <span class="brand">Mentor Merlin</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="quiz-container">
+        <div id="quiz-start" class="quiz-start">
+            <h2>Welcome to the Mentor Merlin Quiz</h2>
+           
+            <div class="form-group">
+                <label for="traineeName">Your Name</label>
+                <input type="text" id="traineeName" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+                <label for="traineeEmail">Email (used for identification)</label>
+                <input type="email" id="traineeEmail" placeholder="Enter your email" required />
+            </div>
+            <button id="startBtn" class="btn">Start Quiz</button>
+        </div>
+        <div id="quiz-content" class="quiz-content hidden">
+            <div class="quiz-header">
+                <span id="timer" class="timer"></span>
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div id="question-area" class="question-area"></div>
+            <div id="navigation" class="navigation">
+                <button id="prevBtn" class="btn small hidden">Previous</button>
+                <button id="nextBtn" class="btn small">Next</button>
+            </div>
+        </div>
+        <div id="quiz-result" class="quiz-result hidden"></div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Mentor Merlin. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
